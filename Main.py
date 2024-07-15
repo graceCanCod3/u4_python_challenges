@@ -1,3 +1,5 @@
+import math
+
 # Python Challenges
 
 
@@ -16,6 +18,34 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def min_to_sec(m):
+    return m * 60
+
+def hr_to_sec(h):
+    return h * 3600
+
+def sec_in_a_day():
+    return hr_to_sec(1) * 24
+
+def hrs_in_june():
+    return 24 * 30
+
+def mins_in_august():
+    return 60 * 24 * 31
+
+def mins_in_a_year():
+    return 365 * 24 * 60
+
+
+print(min_to_sec(1))  
+print(min_to_sec(5))  
+print(hr_to_sec(1)) 
+print(sec_in_a_day())  
+print(hrs_in_june())  
+print(mins_in_august())  
+print(mins_in_a_year())
+
 # ---------------------------------
 
 
@@ -28,6 +58,16 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def mid(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""
+    else:
+        return s[length // 2]
+    
+print(mid("grace")) 
+print(mid("aaaa"))
 # ---------------------------------
 
 
@@ -37,6 +77,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def hide(card_number):
+    return '*' (len(card_number) - 4) + card_number[-4:]
+
+print(hide("1213242536374897")) 
 # ---------------------------------
 
 
@@ -47,12 +92,12 @@
 # For example, consider the following dictionary:
 
 # ```
-# statuses = {
-#     "John": "online",
-#     "Paul": "offline",
-#     "George": "online",
-#     "Ringo": "offline"
-# }
+statuses = {
+    "John": "online",
+    "Paul": "offline",
+    "George": "online",
+    "Ringo": "offline"
+}
 
 # ```
 
@@ -63,6 +108,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def online_count(statuses):
+    return sum(1 for status in statuses.values() if status == "online")
+
+print(online_count(statuses)) 
 # ---------------------------------
 
 
@@ -73,6 +123,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def discounted_price(price, discount):
+    return price - (price * discount / 100)
+
+print(discounted_price(50, 10))
 # ---------------------------------
 
 
@@ -84,6 +139,11 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def hypotenuse(a, b):
+    return int(math.sqrt(a ** 2 + b ** 2))
+
+print(hypotenuse(3, 4))
 # ---------------------------------
 
 
@@ -97,4 +157,13 @@
 
 # ---------------------------------
 #      Solution Goes Here ->
+
+def fibonacci_sequence(n1, n2):
+    sequence = [n1, n2]
+    for _ in range(7):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence
+
+print(fibonacci_sequence(0, 1)) 
+print(fibonacci_sequence(2, 3))
 # ---------------------------------
